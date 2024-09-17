@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sales_channel_view_tree" model="ir.ui.view">
+        <field name="name">sales.channel.view.tree</field>
+        <field name="model">sales.channel</field>
+        <field name="arch" type="xml">
+            <tree string="Canales de Venta">
+                <field name="name" />
+                <field name="codigo" />
+                <field name="deposito" />
+                <field name="diario_de_factura" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sales_channel_view_form" model="ir.ui.view">
+        <field name="name">sales.channel.view.form</field>
+        <field name="model">sales.channel</field>
+        <field name="arch" type="xml">
+            <form string="Canal de Ventas">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="codigo" />
+                        </group>
+                        <group>
+                            <field name="deposito" />
+                            <field name="diario_de_factura" />
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="sales_channel_action" model="ir.actions.act_window">
+        <field name="name">Canales de Ventas</field>
+        <field name="res_model">sales.channel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Agrega menuitem Canales de Venta a Sales -> Configuration -->
+    <menuitem
+        id="sales_channel_menu"
+        name="Canales de Venta"
+        action="sales_channel_action"
+        parent="sale.menu_sale_config"
+        sequence="10"/>
+
+</odoo>

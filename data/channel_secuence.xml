@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <!-- Agrega secuencia +1 a campo 'codigo' -->
+        <record id="sales_channel_code_secuence" model="ir.sequence">
+            <field name="name">Sales Channel Code</field>
+            <field name="code">sales.channel.code.secuence</field>
+            <field name="prefix">CH</field>
+            <field name="padding">6</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+
+</odoo>
